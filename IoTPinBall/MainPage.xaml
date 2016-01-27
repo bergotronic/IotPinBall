@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="IoTPinBall.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:IoTPinBall"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        
+        <StackPanel HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1">
+            <TextBlock Name="textBlockTabDataRunbooks" Text="Welcome to IoT Pinball" FontSize="18.667" FontWeight="Bold"/>
+
+        </StackPanel>
+
+        <StackPanel Name="PlayerSetup" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <TextBlock Name="TextBlockCurrentStep" Text="Setup" FontSize="18.667" FontWeight="Bold"/>
+            <TextBlock Name="TextBlockCurrentInstruction" Text="Please Enter your Name" FontSize="18.667" FontWeight="Bold"/>
+            <TextBox Name="TextBoxPlayerName" />
+            <Button x:Name="button" Click="button_Click" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Start Game" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+
+        <StackPanel Name="GamePlay" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <TextBlock Name="GamePlayHeader" Text="Game In Progress!" FontSize="18.667" FontWeight="Bold"/>
+            <TextBox Name="TextBox_CURRENTSCORE"></TextBox>
+                
+            <Button x:Name="button_AddPoints" Click="button_AddPoints_Click" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="Points!" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="button_GameDone" Click="button_GameDone_Click"  >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="GAME OVER!" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Name="StackGameover" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                <TextBlock Name="GameOverHeader" Text="You Failed!" FontSize="18.667" FontWeight="Bold"/>
+
+                <Button x:Name="button_reset" Click="button_reset_Click" >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Text="NEW GAME" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+          
+
+        </StackPanel>
+        <Image x:Name="image" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="Assets\SinBad.png" Grid.Row="2"/>
+
+    </Grid>
+</Page>
