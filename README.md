@@ -20,6 +20,6 @@ This is a Windows 10 Universal Application designed to read score data from a pi
 ![alt tag](https://raw.githubusercontent.com/bergotronic/IotPinBall/master/Screenshots/3.png)
 
 ###Local Data Logging
-![alt tag](https://raw.githubusercontent.com/bergotronic/IotPinBall/master/Screenshots/4.png)
+![alt tag](https://raw.githubusercontent.com/bergotronic/IotPinBall/master/Screenshots/4..png)
 
 
