@@ -36,7 +36,8 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Center">
-            <TextBlock Name="textBlockTabDataRunbooks" Text="Welcome to IoT Pinball" FontSize="64" FontWeight="Bold"/>
+            <TextBlock Name="textBlockHeader" Text="IoT Pinball" FontSize="85.333" FontWeight="Bold" FontFamily="Bauhaus 93"/>
+            <TextBlock Name="textBlockTabCoolDudes" Text="Lee Berg - Chris Nackers" FontSize="26.667" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Bauhaus 93"/>
         </StackPanel>
 
 
@@ -46,7 +47,13 @@
             <TextBlock Name="TextBlockCurrentStep" Text="Setup" FontSize="18.667" FontWeight="Bold"/>
             <TextBlock Name="TextBlockCurrentInstruction" Text="Please Enter your Name" FontSize="18.667" FontWeight="Bold"/>
             <TextBox Name="TextBoxPlayerName" />
-            <Button x:Name="button" Click="button_Click" >
+
+            <TextBlock Name="TextBlockEmail" Text="Email:" FontSize="18.667" FontWeight="Bold"/>
+            <TextBox Name="TextBoxPlayerEmail" />
+
+            <TextBlock Name="TextBlockEmailSpacer" Text="" FontSize="18.667" FontWeight="Bold"/>
+
+            <Button x:Name="button" Click="button_Click" HorizontalAlignment="Center" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBlock Text="Start Game" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 </StackPanel>
@@ -56,7 +63,8 @@
 
         <StackPanel Name="GamePlay" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="10,13.667,10,14.667" Width="340">
             <TextBlock Name="GamePlayHeader" Text="Game In Progress!" FontSize="18.667" FontWeight="Bold" Foreground="Red" HorizontalAlignment="Center"/>
-            <TextBox Name="TextBox_CURRENTSCORE" FontSize="48" FontWeight="Bold" BorderThickness="5,6,5,5"/>
+            
+            <TextBox Name="TextBox_CURRENTSCORE" FontSize="60" FontWeight="Bold" BorderThickness="5,6,5,5" IsReadOnly="True" FontFamily="Consolas"/>
 
             <Button x:Name="button_AddPoints" Click="button_AddPoints_Click" HorizontalAlignment="Center" >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
