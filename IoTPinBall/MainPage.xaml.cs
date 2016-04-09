@@ -18,8 +18,9 @@ using Windows.UI.Xaml.Navigation;
 using Microsoft.Azure.Devices.Client;
 using System.Text;
 using Windows.System.Threading;
-//using Windows.Devices.I2c;
-//using Windows.Devices.Enumeration;
+using Microsoft.Azure.Devices.Client;
+using Windows.Devices.I2c;
+using Windows.Devices.Enumeration;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -37,6 +38,7 @@ namespace IoTPinBall
             StackGameover.Visibility = Visibility.Collapsed;
             DispatcherTimerSetup();
             TextBox_CURRENTSCORE.TextAlignment = TextAlignment.Center;
+            InitSPI();
         }
 
         class PinballData
@@ -62,7 +64,8 @@ namespace IoTPinBall
 
         private const string DeviceConnectionString = "Put your String here :)";
 
-        //I2cDevice Digit1;
+        
+        I2cDevice Digit1;
         //I2cDevice Digit2;
         //I2cDevice Digit3;
         //I2cDevice Digit4;
@@ -196,57 +199,38 @@ namespace IoTPinBall
 
         }
 
-        private void Timer_Tick(ThreadPoolTimer timer)
+        private async void Timer_Tick(ThreadPoolTimer timer)
         {
-            /*
-            String aqs = I2cDevice.GetDeviceSelector("I2C1");
+            try
+            {
 
-            byte[] Digit1Command = { 0x00 };
-            byte[] Digit2Command = { 0x00 };
-            byte[] Digit3Command = { 0x00 };
-            byte[] Digit4Command = { 0x00 };
-            byte[] Digit5Command = { 0x00 };
-            byte[] Digit6Command = { 0x00 };
-            byte[] Digit7Command = { 0x00 };
-            byte[] Digit8Command = { 0x00 };
-            byte[] Digit9Command = { 0x00 };
+                Debug.WriteLine("1");
+                String aqs = I2cDevice.GetDeviceSelector("I2C1");
 
-            byte[] Digit1Data = new byte[8];
-            byte[] Digit2Data = new byte[8];
-            byte[] Digit3Data = new byte[8];
-            byte[] Digit4Data = new byte[8];
-            byte[] Digit5Data = new byte[8];
-            byte[] Digit6Data = new byte[8];
-            byte[] Digit7Data = new byte[8];
-            byte[] Digit8Data = new byte[8];
-            byte[] Digit9Data = new byte[8];
+                Debug.WriteLine("2");
+                byte[] Digit1Data = new byte[8];
+                byte[] Digit1Command = new byte[0];
 
-            var deviceInfo = await DeviceInformation.FindAllAsync(aqs);
+                Debug.WriteLine("3");
+                var deviceInfo = await DeviceInformation.FindAllAsync(aqs);
 
-            Digit1 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x40));
-            Digit2 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x41));
-            Digit3 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x42));
-            Digit4 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x43));
-            Digit5 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x44));
-            Digit6 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x45));
-            Digit7 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x46));
-            Digit8 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x47));
-            Digit9 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x48));
-            
-            
-            Digit1.WriteRead(Digit1Command, Digit1Data);
-            Digit2.WriteRead(Digit2Command, Digit2Data);
-            Digit3.WriteRead(Digit3Command, Digit3Data);
-            Digit4.WriteRead(Digit4Command, Digit4Data);
-            Digit5.WriteRead(Digit5Command, Digit5Data);
-            Digit6.WriteRead(Digit6Command, Digit6Data);
-            Digit7.WriteRead(Digit7Command, Digit7Data);
-            Digit8.WriteRead(Digit8Command, Digit8Data);
-            Digit9.WriteRead(Digit9Command, Digit9Data);
+                Debug.WriteLine("4");
+                Digit1 = await I2cDevice.FromIdAsync(deviceInfo[0].Id, new I2cConnectionSettings(0x70));
+
+                Debug.WriteLine("5");
+                Digit1.WriteRead(Digit1Command,Digit1Data);
 
 
-            */
+                Debug.WriteLine("Trying to do the data thing");
 
+          
+                Debug.WriteLine(Digit1Data.ToString());
+            }
+            catch
+            {
+                Debug.WriteLine("Fuck you");
+            }
+    
 
         }
         private async Task Log_Event(string DataValue, string Name, string Sensor, string DataType, string UnitOfMeasure)

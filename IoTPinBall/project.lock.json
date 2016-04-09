@@ -3,6 +3,27 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -34,7 +55,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -66,6 +87,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -1585,6 +1647,27 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -1616,7 +1699,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -1648,6 +1731,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -3257,6 +3381,27 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -3288,7 +3433,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -3320,6 +3465,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -4901,6 +5087,27 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -4932,7 +5139,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -4964,6 +5171,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -6578,6 +6826,27 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -6609,7 +6878,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -6641,6 +6910,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -8222,6 +8532,27 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -8253,7 +8584,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -8285,6 +8616,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -9899,6 +10271,27 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "AMQPNetLite/1.1.0": {
+        "compile": {
+          "lib/windows8/Amqp.Store.dll": {}
+        },
+        "runtime": {
+          "lib/windows8/Amqp.Store.dll": {}
+        }
+      },
+      "AzureSBLite/1.1.0": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )"
+        },
+        "compile": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        },
+        "runtime": {
+          "lib/windows81/Amqp.Store.dll": {},
+          "lib/windows81/AzureSBLite.WinRT.dll": {}
+        }
+      },
       "Microsoft.ApplicationInsights/1.0.0": {
         "compile": {
           "lib/portable-win81+wpa81/Microsoft.ApplicationInsights.dll": {}
@@ -9930,7 +10323,7 @@
           "lib/win81/Microsoft.ApplicationInsights.Extensibility.Windows.dll": {}
         }
       },
-      "Microsoft.Azure.Devices.Client/1.0.1": {
+      "Microsoft.Azure.Devices.Client/1.0.4": {
         "compile": {
           "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd": {}
         },
@@ -9962,6 +10355,47 @@
         },
         "runtime": {
           "lib/netcore50/Microsoft.CSharp.dll": {}
+        }
+      },
+      "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+        "dependencies": {
+          "AMQPNetLite": "[1.1.0, )",
+          "AzureSBLite": "[1.1.0, )",
+          "Newtonsoft.Json": "[7.0.1, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceCore/1.0.3": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd": {}
+        }
+      },
+      "Microsoft.IoT.DeviceHelpers/1.0.4": {
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll": {}
+        }
+      },
+      "Microsoft.IoT.Devices/1.0.6": {
+        "dependencies": {
+          "Microsoft.IoT.DeviceCore": "[1.0.3, )",
+          "Microsoft.IoT.DeviceHelpers": "[1.0.4, )"
+        },
+        "compile": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
+        },
+        "runtime": {
+          "lib/uap10.0/Microsoft.IoT.Devices.winmd": {}
         }
       },
       "Microsoft.NETCore/5.0.0": {
@@ -11544,6 +11978,86 @@
     }
   },
   "libraries": {
+    "AMQPNetLite/1.1.0": {
+      "sha512": "HMFRLvaC1HtE1MYDX5dg9ng8clFPoUwTVwKhQEydk6i2+/u9/2zZ9nQRbITjfxYrlRBgAGGBVCP7EYALHe6QxA==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "AMQPNetLite.nuspec",
+        "lib/net35/Amqp.Net35.dll",
+        "lib/net35/Amqp.Net35.pdb",
+        "lib/net45/Amqp.Net.dll",
+        "lib/net45/Amqp.Net.pdb",
+        "lib/netcf39/Amqp.NetCF39.dll",
+        "lib/netcf39/Amqp.NetCF39.pdb",
+        "lib/netcf39/DeployFileList.txt",
+        "lib/netmf42/Amqp.NetMF.dll",
+        "lib/netmf42/Amqp.NetMF.pdb",
+        "lib/netmf42/be/Amqp.NetMF.pdb",
+        "lib/netmf42/be/Amqp.NetMF.pdbx",
+        "lib/netmf42/be/Amqp.NetMF.pe",
+        "lib/netmf42/le/Amqp.NetMF.pdb",
+        "lib/netmf42/le/Amqp.NetMF.pdbx",
+        "lib/netmf42/le/Amqp.NetMF.pe",
+        "lib/netmf43/Amqp.NetMF.dll",
+        "lib/netmf43/Amqp.NetMF.pdb",
+        "lib/netmf43/be/Amqp.NetMF.pdb",
+        "lib/netmf43/be/Amqp.NetMF.pdbx",
+        "lib/netmf43/be/Amqp.NetMF.pe",
+        "lib/netmf43/le/Amqp.NetMF.pdb",
+        "lib/netmf43/le/Amqp.NetMF.pdbx",
+        "lib/netmf43/le/Amqp.NetMF.pe",
+        "lib/portable-netcore451+wpa81/Amqp.NetCore.dll",
+        "lib/portable-netcore451+wpa81/Amqp.NetCore.pdb",
+        "lib/portable-netcore451+wpa81/Amqp.NetCore.pri",
+        "lib/windows8/Amqp.Store.dll",
+        "lib/windows8/Amqp.Store.pdb",
+        "lib/windows8/Amqp.Store.pri",
+        "lib/windowsphone8/Amqp.WP.dll",
+        "lib/windowsphone8/Amqp.WP.pdb",
+        "package/services/metadata/core-properties/d850cf41b1f24143a0f675f8b1d5b605.psmdcp"
+      ]
+    },
+    "AzureSBLite/1.1.0": {
+      "sha512": "EPKHpCRVBj7tGyVWlqOnY1ZJwjoYAtRsCpAgIoF/D4bRvRZsKGVaM+0HUTZqoUlyo2KK5ofORqc2589bDNfWrA==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "AzureSBLite.nuspec",
+        "lib/net45/Amqp.Net.dll",
+        "lib/net45/Amqp.Net.pdb",
+        "lib/net45/AzureSBLite.Net.dll",
+        "lib/net45/AzureSBLite.Net.pdb",
+        "lib/netcf39/Amqp.NetCF39.dll",
+        "lib/netcf39/Amqp.NetCF39.pdb",
+        "lib/netcf39/AzureSBLite.NetCf39.dll",
+        "lib/netcf39/AzureSBLite.NetCf39.pdb",
+        "lib/netcf39/DeployFileList.txt",
+        "lib/netmf43/Amqp.NetMF.dll",
+        "lib/netmf43/Amqp.NetMF.pdb",
+        "lib/netmf43/AzureSBLite.NetMf.dll",
+        "lib/netmf43/AzureSBLite.NetMf.pdb",
+        "lib/netmf43/be/Amqp.NetMF.pdbx",
+        "lib/netmf43/be/Amqp.NetMF.pe",
+        "lib/netmf43/be/AzureSBLite.NetMf.pdb",
+        "lib/netmf43/be/AzureSBLite.NetMf.pdbx",
+        "lib/netmf43/be/AzureSBLite.NetMf.pe",
+        "lib/netmf43/le/Amqp.NetMF.pdbx",
+        "lib/netmf43/le/Amqp.NetMF.pe",
+        "lib/netmf43/le/AzureSBLite.NetMf.pdb",
+        "lib/netmf43/le/AzureSBLite.NetMf.pdbx",
+        "lib/netmf43/le/AzureSBLite.NetMf.pe",
+        "lib/windows81/Amqp.Store.dll",
+        "lib/windows81/Amqp.Store.pdb",
+        "lib/windows81/Amqp.Store.pri",
+        "lib/windows81/AzureSBLite.WinRT.dll",
+        "lib/windows81/AzureSBLite.WinRT.pdb",
+        "lib/windows81/AzureSBLite.WinRT.pri",
+        "package/services/metadata/core-properties/b7da332093b1423c8ab891db2b638e51.psmdcp"
+      ]
+    },
     "Microsoft.ApplicationInsights/1.0.0": {
       "sha512": "HZ47/thX57SOuIivSvIbsR6L9CCb/Yt3IyB2i4KHmmNlf3DO+lqFwWIKDdbDNWKX+qh0Rg20/JSMPK0dwUsYYw==",
       "type": "Package",
@@ -11579,7 +12093,7 @@
       ]
     },
     "Microsoft.ApplicationInsights.WindowsApps/1.0.0": {
-      "sha512": "fNCAjIwvbTV+G0dT14bgM5tptsqeSaKQaCrlq7QknOq1Xdm8ZmgsDYddMgXkvykyKLjWyU6fKuOpj6fsQJy+wQ==",
+      "sha512": "NvBQnFeiFd0O1QdBz06UGApD7zn7ztVi7qO18IsM3EjiXRNgfrEBXB+azNm8XqLY8xGFAqh3HAuSd/wHZMe0XA==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
@@ -11594,16 +12108,18 @@
         "package/services/metadata/core-properties/4f6f732debe548beaa1183418e8d65cc.psmdcp"
       ]
     },
-    "Microsoft.Azure.Devices.Client/1.0.1": {
-      "sha512": "nKed694xmcwPoXv76SQYMIt69yJUka27B97OFfcXhQ9hrozOX5xaeeVd2J8zTtKqn+WInRWmDkcvi39MTRg//Q==",
+    "Microsoft.Azure.Devices.Client/1.0.4": {
+      "sha512": "Iej6CrclfHeZOMY+Ga8q3MMbKaTCv5JcTUX3DYqQ7xCXAzJ44zidH4bJZ7wJtHEwMkv47fTTDJLKRqD9CsQrLw==",
       "type": "Package",
       "files": [
         "[Content_Types].xml",
         "_rels/.rels",
+        "build/native/Microsoft.Azure.Devices.Client.targets",
+        "lib/native/Microsoft.Azure.Devices.Client.winmd",
         "lib/net45/Microsoft.Azure.Devices.Client.dll",
         "lib/uap10.0/Microsoft.Azure.Devices.Client.winmd",
         "Microsoft.Azure.Devices.Client.nuspec",
-        "package/services/metadata/core-properties/46de89aa47204e3c88aac6fe09be3dd4.psmdcp",
+        "package/services/metadata/core-properties/41d42f39c5eb4aed95ab62d1e6930a28.psmdcp",
         "thirdpartynotice.txt"
       ]
     },
@@ -11646,6 +12162,65 @@
         "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._"
+      ]
+    },
+    "Microsoft.IoT.Connections.Azure/0.7.5.13": {
+      "sha512": "9LWxCfQUeSNeOthlN7h2lQ6lL1gMkf6pocDojAg/mfTObVrrupb0r6nMdS3X0hbh71lv9rxEJdpLRC0EIMmF3Q==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/uap10.0/Microsoft.IoT.Connections.Azure.pri",
+        "lib/uap10.0/Microsoft.IoT.Connections.Azure.winmd",
+        "lib/uap10.0/Microsoft.IoT.Connections.Azure/Properties/Azure.rd.xml",
+        "Microsoft.IoT.Connections.Azure.nuspec",
+        "package.bat",
+        "package/services/metadata/core-properties/35ae62c860fc4dcd8a5391a3f6749f19.psmdcp"
+      ]
+    },
+    "Microsoft.IoT.DeviceCore/1.0.3": {
+      "sha512": "CVa2TcS6B4n4qVi4mtqAmgqYj2NRugJqhHKo1YzayGw5VgpqWLRJOm0HDUFROGTX3pcsSPE9jAQGoU2ugumzVw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "build/Microsoft.IoT.DeviceCore.targets",
+        "lib/uap10.0/Microsoft.IoT.DeviceCore.pdb",
+        "lib/uap10.0/Microsoft.IoT.DeviceCore.pri",
+        "lib/uap10.0/Microsoft.IoT.DeviceCore.winmd",
+        "lib/uap10.0/Microsoft.IoT.DeviceCore/Microsoft.IoT.DeviceCore.xr.xml",
+        "lib/uap10.0/Microsoft.IoT.DeviceCore/Themes/Generic.xaml",
+        "Microsoft.IoT.DeviceCore.nuspec",
+        "package/services/metadata/core-properties/a1904a5e4891437abbde4acfc08a0253.psmdcp"
+      ]
+    },
+    "Microsoft.IoT.DeviceHelpers/1.0.4": {
+      "sha512": "SqYkxwOFvupxGJx7srYuVaqQtuxpKBKjcDQFP9435B3O0jBRTiVo66qJCxrN5v5XEJM3snsKRlAkqRFD28fAkw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/uap10.0/Microsoft.IoT.DeviceHelpers.dll",
+        "lib/uap10.0/Microsoft.IoT.DeviceHelpers.pdb",
+        "lib/uap10.0/Microsoft.IoT.DeviceHelpers.pri",
+        "lib/uap10.0/Microsoft.IoT.DeviceHelpers.XML",
+        "lib/uap10.0/Microsoft.IoT.DeviceHelpers/Properties/Microsoft.IoT.DeviceHelpers.rd.xml",
+        "Microsoft.IoT.DeviceHelpers.nuspec",
+        "package/services/metadata/core-properties/7bb989b7eea642e3b08aab8124b6415f.psmdcp"
+      ]
+    },
+    "Microsoft.IoT.Devices/1.0.6": {
+      "sha512": "BpID52RDpoJYj9YOIbFr6yPyKz398RGMsiYs4hwaSKK+KafBj/13NyXBPOupz2OFjZAqxznXXZahunNMUWuVcw==",
+      "type": "Package",
+      "files": [
+        "[Content_Types].xml",
+        "_rels/.rels",
+        "lib/uap10.0/Microsoft.IoT.Devices.pdb",
+        "lib/uap10.0/Microsoft.IoT.Devices.pri",
+        "lib/uap10.0/Microsoft.IoT.Devices.winmd",
+        "lib/uap10.0/Microsoft.IoT.Devices.XML",
+        "Microsoft.IoT.Devices.nuspec",
+        "package/services/metadata/core-properties/f6e2851af6084ee785328c90770597c9.psmdcp"
       ]
     },
     "Microsoft.NETCore/5.0.0": {
@@ -14984,7 +15559,11 @@
       "Microsoft.ApplicationInsights >= 1.0.0",
       "Microsoft.ApplicationInsights.PersistenceChannel >= 1.0.0",
       "Microsoft.ApplicationInsights.WindowsApps >= 1.0.0",
-      "Microsoft.Azure.Devices.Client >= 1.0.1",
+      "Microsoft.Azure.Devices.Client >= 1.0.4",
+      "Microsoft.IoT.Connections.Azure >= 0.7.5.13",
+      "Microsoft.IoT.DeviceCore >= 1.0.3",
+      "Microsoft.IoT.DeviceHelpers >= 1.0.4",
+      "Microsoft.IoT.Devices >= 1.0.6",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "Newtonsoft.Json >= 8.0.2"
     ],
